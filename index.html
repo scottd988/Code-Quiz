@@ -3,11 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPA</title>
+  <title>Coding Quiz</title>
   <link rel="stylesheet" href="./assets/style.css"/>
 </head>
 <body>
+  <header>Coding Quiz</header>
   <main>
+    <div id="question-container">
+      <h2>Question 1:</h2>
+      <p id="question-text">What is JavaScript?</p>
+      <ul id="answer-choices">
+          <li><button class="choice">Choice 1</button></li>
+          <li><button class="choice">Choice 2</button></li>
+          <li><button class="choice">Choice 3</button></li>
+          <li><button class="choice">Choice 4</button></li>
+      </ul>
+    </div>
+    <div id="timer">Time: <span id="time-remaining">60</span></div>
+    <div id="game-over" style="display: none;">
+        <h2>Game Over!</h2>
+        <form id="score-form">
+            <label for="initials">Enter Your Initials:</label>
+            <input type="text" id="initials">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
   </main>
   <script src="./assets/script.js"></script>
