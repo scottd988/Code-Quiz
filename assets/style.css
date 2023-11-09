@@ -1,0 +1,68 @@
+header {
+    text-align: center;
+    background-color: lightblue;
+    color: blue;
+    padding: 10px;
+    font-size: 24px;
+    font-family: 'DM Serif Display', serif;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+#question-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.choice {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: lightblue;
+    color: blue;
+    border: cadetblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.choice:hover {
+    background-color: darkseagreen;
+}
+
+#game-over {
+    display: none;
+}
+
+#score-form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: blue;
+    color: aqua;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: darkslateblue;
+}

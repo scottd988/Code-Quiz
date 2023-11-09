@@ -15,7 +15,6 @@ var questionArr = [
     answer: "<s>",
     choices: ["<s>", "<li>", "<ul>", "<u>"]
   }, {
-  }, {
     question: "What tag is used to define a standard cell inside a table?",
     answer: "<td>",
     choices: ["<h1>", "<td>", "<button>", "<footer>"]
@@ -52,10 +51,14 @@ function showQuestion() {
   const answerChoice = document.getElementById("answer-choices");
   const currentQuestion = questionArr[q];
 
+  if (q >= questionArr.length) {
+    endQuiz();
+    return
+  }
+
   questionText.textContent = currentQuestion.question;
 
   answerChoice.innerHTML = "";
-
 
   // Populate the answer choices 
   currentQuestion.choices.forEach(function(choice, index){
@@ -63,7 +66,7 @@ function showQuestion() {
     choiceButton.classList.add("choice");
     choiceButton.textContent = choice;
     choiceButton.addEventListener("click", function() {
-      checkAnswer(choice);
+      checkAnswer(choice, currentQuestion);
     });
     answerChoice.appendChild(choiceButton);
   });
@@ -71,23 +74,18 @@ function showQuestion() {
   console.log(questionArr[q]);
 }
 // check answer
-function checkAnswer(selectedChoice){
+function checkAnswer(selectedChoice, currentQuestion){
  var currentQuestion = questionArr[q];
 
  // Update score for correct answer
  if (selectedChoice === currentQuestion.answer) {
+  currentQuestion.answeredCorrectly = true;
+  q++;
   score++;
  } else {
-//
- }
 
- q++;
-
- if (q < questionArr.length) {
-  showQuestion();
- } else {
-  endQuiz();
  }
+ showQuestion();
 }
 
 function endQuiz(){
